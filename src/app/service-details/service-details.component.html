@@ -1,0 +1,73 @@
+<h3>Service Name: {{serviceName}}</h3>
+<app-side-nav>
+    
+</app-side-nav>
+
+
+<form [formGroup]="urlForm">
+    <div class="row">
+        <div class="col-md-2 col-lg-2 col-sm-12">
+
+            <label>
+                <h5>URL<span class="required-asterisk">*</span></h5>
+            </label>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-12">
+            <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="text"
+                formControlName="method" name="method" placeholder="">
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="text"
+                formControlName="url" name="url" placeholder="">
+        </div>
+        <div class="col-md-4 col-lg-4 col-sm-12 ">
+            <button (click)="tryOut()" class="btn rbtn ">TRY OUT </button>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-2 col-lg-2 col-sm-12">
+
+            <label>
+                <h5>RequestBody :<span class="required-asterisk"></span></h5>
+            </label>
+        </div>
+
+        <div class="col-md-8 col-lg-8 col-sm-12">
+            <textarea class="form-control " style="height: 200px;"
+                type="text" formControlName="requestBody" name="requestBody" placeholder="">
+            </textarea>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-2 col-lg-2 col-sm-12">
+
+            <label>
+                <h5>Response :<span class="required-asterisk"></span></h5>
+            </label>
+        </div>
+
+        <div class="col-md-8 col-lg-8 col-sm-12">
+            <textarea class="form-control " style="height: auto;" oninput="this.value = this.value.toUpperCase()"
+                type="text" formControlName="response" name="Response" placeholder="">
+            </textarea>
+        </div>
+    </div>
+</form>
+<div class="row pt-3">
+    <div class="col-md-2 col-lg-2 col-sm-12">
+
+      
+            <h5>Status Code: </h5>
+  
+    </div>
+
+    <div class="col-md-2 col-lg-2 col-sm-12">
+        <h5>  {{statusCode}}  {{statusCodeValue}}  </h5> 
+
+    </div>
+</div>
+
+
+
+
+

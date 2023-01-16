@@ -1,0 +1,116 @@
+<div class="container-fluid">
+  <!-- Toggle button -->
+  <!-- <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+      aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" style="background-color:black">
+      <i class="fas fa-bars"></i>
+    </button> -->
+  <div class="row">
+    <nav style="border-bottom: 1px solid #c7c7c7">
+      <div class="row col-md-12">
+        <div class="col-md-6">
+          <span style="text-align: left;">
+            <a [routerLink]="['']" routerLinkActive="active" class="navbar-brand btn"><img src="assets/Dev.png"
+                alt="No Image Found"></a>
+
+          </span>
+        </div>
+
+        <div class="col-md-3"></div>
+
+        <div class="col-md-3">
+
+          <!-- <a (click)="exploreapi()" s style="margin-left: 35%; color: #1ABB9C">
+          <i class="bi bi-arrow-up-right"> </i>Explore APIs
+        </a> -->
+
+          <div>
+            <div>
+
+              <div *ngIf="loggedIn===true;else notLoggedIn">
+
+                <div class="row">
+                  <div class="col-md-5" style="text-align: right;">
+                    <div class="dropdown">
+                      <a class=" highlights" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false" role="button" data-bs-toggle="dropdown">
+                        <i class="bi-person-circle" style="font-size:30px"></i>&nbsp;
+                        <i class="bi bi-caret-down-fill"></i>
+                      </a>
+
+                      <!-- kirti -->
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: 50%;">
+                        <li>
+                           <a [routerLink]="['']" routerLinkActive="router-link-active" (click)="signOut()">
+                            Sign Out
+                          </a>
+                        </li>
+                        <li>
+                          <a (click)="exploreapi()" style=" color: #1ABB9C">
+                            <i class="bi bi-arrow-up-right"> </i>Explore APIs
+                          </a>
+                        </li>
+                      </ul>
+
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="justify-content-center align-self-center" style="text-align: right; font-size: small;">
+                      <div>
+                        <span>Welcome, </span>
+                        <span> {{userName}}</span>
+                      </div>
+                      <!-- data-bs-toggle="tooltip" data-bs-placement="bottom" title="Last login: 11th Apr 2022, 06:00 PM" -->
+                      <div style="
+                          white-space: nowrap;
+                          overflow: hidden;
+                          text-overflow: ellipsis;" matTooltip={{lastlogintime}} matTooltipPosition="below">
+                        <span>Last login:</span>
+                        <span>{{lastlogintime | date:"dd/MM/yyyy HH:mm:ss"}}</span>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+
+
+              </div>
+
+
+
+
+
+
+              <ng-template #notLoggedIn>
+
+                <a class="nav-link" [routerLink]="['/login']"> Sign In</a>
+
+
+              </ng-template>
+
+
+
+              <!-- <a class=" highlights" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                <i class="bi bi-person-fill highlights"></i>&nbsp;&nbsp;Hi
+                {{userName}} {{lastlogintime | date:"dd/MM/yyyy HH:mm:ss"}}<i class="bi bi-caret-down-fill"></i>
+              </a> -->
+              <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: 50%;">
+                <li> <a [routerLink]="['']" routerLinkActive="router-link-active" (click)="signOut()">
+                    Sign Out
+                  </a></li>
+              </ul> -->
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

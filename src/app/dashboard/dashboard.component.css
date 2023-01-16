@@ -1,0 +1,55 @@
+.workImageContainer{
+    background-color: #ae282e;
+    width: 47px;
+  
+    border-radius: 50%;
+    height: 47px;
+line-height: 50px;
+    font-size: 28px;    
+}
+.circle {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    background: #1ABB9C;
+    margin-top: 15%;
+    margin-left: 10%;
+  }
+  .circle1 {
+    width: 90px;
+    height: 47px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    background: #000;
+
+
+  }
+  .journey{
+    font-family: Mulish-Regular;
+    text-align: center;
+ 
+    color: #212121;
+    font-size: 50px;
+
+  }
+  a {
+    color: #1ABB9C;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color:#1ABB9C; 
+    text-decoration:none; 
+    cursor:pointer;  
+  }
+  .nxt-img {
+    width: 45px!important;
+    margin-top: 130%!important;
+}

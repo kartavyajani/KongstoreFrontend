@@ -1,0 +1,23 @@
+.rbtn{
+    color: white;
+background: #1ABB9C;
+width: 130px;
+height: 40px;
+
+
+  }
+  .cbtn{
+    color: white;
+background: #c2c2c2;
+width: 130px;
+height: 40px;
+
+
+  }
+  .required-asterisk{
+    color: #ff0000;
+
+    font-weight: bold;
+    margin-left: 3px;
+    font-size: 1.2em;
+}

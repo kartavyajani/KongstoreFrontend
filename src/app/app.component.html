@@ -1,0 +1,156 @@
+
+
+
+
+
+
+
+
+
+<!-- <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white pt-5">
+
+
+
+  <div class="position-sticky">
+    <div class="list-group list-group-flush mx-3 mt-4">
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+        <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+          class="fas fa-lock fa-fw me-3"></i><span>Password</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+          class="fas fa-chart-line fa-fw me-3"></i><span>Analytics</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+        <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+          class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+          class="fas fa-globe fa-fw me-3"></i><span>International</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+          class="fas fa-building fa-fw me-3"></i><span>Partners</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+          class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+          class="fas fa-users fa-fw me-3"></i><span>Users</span></a>
+      <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+          class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a>
+    </div>
+  </div>
+</nav> -->
+<!-- Sidebar -->
+<app-navbar>
+  
+</app-navbar>
+
+<!-- <div class="container-fluid"> -->
+  <!-- Toggle button -->
+  <!-- <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" style="background-color:black">
+    <i class="fas fa-bars"></i>
+  </button> -->
+  <!-- <nav
+    class="d-none d-lg-block d-md-block d-sm-none navbar  navbar-light bg-light shadow d-block col-lg-12 col-md-12 col-sm-12">
+    <div class="container">
+      <span>
+        <a [routerLink]="['']" routerLinkActive="active" class="navbar-brand btn"><img src="assets/Dev.png"
+            alt="No Image Found"></a>
+
+      </span>
+      
+      <a [routerLink]="['/api-list']" routerLinkActive="router-link-active" 
+        style="margin-left: 35%;">
+        Explore APIs
+    </a>
+    <div *ngIf="loggedIn===true">
+      <a [routerLink]="['']" routerLinkActive="router-link-active" (click)="signOut()" >
+        Sign Out
+      </a>
+    </div>
+
+      <div>
+
+        <div class="input-group-text location">
+
+          <div *ngIf="loggedIn===true;else notLoggedIn">
+        
+           
+         
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle highlights" id="navbarDropdownMenuLink" role="button"
+                  data-bs-toggle="dropdown">
+                  <i class="bi bi-person-fill highlights"></i>&nbsp;&nbsp;Hi
+                  {{userName}}
+                </a>
+              
+               
+              </li>
+
+              
+            </ul>
+          
+          </div>
+          <ng-template #notLoggedIn>
+            <button [routerLink]="['/login']" routerLinkActive="router-link-active" class="btn nbtn border mx-3 p-2">
+              Sign In
+            </button>
+          </ng-template>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </nav>
+</div> -->
+
+<!-- <div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <span class="fs-5 d-none d-sm-inline">Menu</span>
+        </a>
+
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+
+          <div class="tags" *ngFor="let tag of tags ">
+            <li>
+
+              <a data-bs-toggle="collapse"
+                class="nav-link px-0 align-middle d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <button class="ms-1 d-none d-sm-inline" (click)="getServices(tag)">{{tag}}</button> </a>
+
+
+
+              <ul class="collapse show nav flex-column ms-1" *ngFor="let sevice of tag.items " id="submenu1"
+                data-bs-parent="#menu">
+                <li class="w-100">
+                  <a class="nav-link px-0" style="background-color: white;"> <span class="d-none d-sm-inline"></span>
+                  </a>
+                </li>
+
+              </ul>
+
+            </li>
+          </div>
+
+
+
+
+        </ul>
+
+        <hr>
+
+      </div>
+    </div> -->
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+<!-- </div> -->
+<!-- </div>[ngStyle]="{'display':Services.CarLoan.collapse ? 'block' : 'none' }" -->

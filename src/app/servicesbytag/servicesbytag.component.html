@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-lg-2">
+        <app-side-nav></app-side-nav>
+    </div>
+    <div class="col-lg-10">
+
+        <div class="row">
+            <div class="col-lg-6">
+
+
+                <h1>List of APIs</h1>
+            </div>
+            <div class="col-lg-6">
+
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                    placeholder="&#xF002;  Start searching for API">
+            </div>
+        </div>
+        <div class="row pt-3">
+
+
+            <mat-card  class="card"  *ngFor="let service of Services| filter:searchText | paginate: {
+                itemsPerPage: 12,
+                currentPage: p,
+                totalItems: Services.length} " (click)="getdetails(service.id) ">
+    
+      <mat-card-title style="background: rgb(41 150 85 / 52%);padding:30px 20px;">{{service.name.substr(0,2)|uppercase}}          
+
+     </mat-card-title>
+      <mat-card-content style="padding:1em;">
+     <p class="serviceName" ><b>{{service.name}}</b></p>
+      </mat-card-content>
+    
+    </mat-card>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    
+    
+            <!-- <div class="d-flex justify-content-center">
+             <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div> -->
+        </div>
+    </div>
+</div>

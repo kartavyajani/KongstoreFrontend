@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-lg-2">
+        <app-side-nav></app-side-nav>
+    </div>
+    <div class="col-lg-10">
+
+        <div class="row">
+            <div class="col-lg-6">
+
+
+                <h1>List of APIs</h1>
+            </div>
+            <div class="col-lg-6">
+
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                    placeholder="&#xF002;  Start searching for API">
+            </div>
+        </div>
+        <div class="row pt-3" *ngIf="( services.data | filter : searchText) as result">
+
+
+            <mat-card class="card" *ngFor="let service of result| filter:searchText | paginate: {
+                itemsPerPage: 12,
+                currentPage: p,
+                totalItems: services.length} " (click)="getdetails(service.id) ">
+                <div >
+
+                </div>
+
+
+                <mat-card-title style="background: rgb(41 150 85 / 52%);padding:30px 20px; cursor:pointer; text-align: center;">
+                    {{service.name.substr(0,2)|uppercase}}
+
+                </mat-card-title>
+                <mat-card-content style="padding:1em;">
+                    <p class="serviceName" style="text-align: center;"><b>{{service.name}}</b>
+                       <label><b>Created at:</b> {{service.created_at *1000 | date:'MMM d, y h:mm a'}}</label></p>
+                </mat-card-content>
+
+            </mat-card>
+           
+
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+            <!-- <div class="d-flex justify-content-center">
+             <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div> -->
+    <p style="font-size: 25px ; color: red; " *ngIf="result.length === 0">No result found for {{searchText}}</p>
+        </div>
+      
+    </div>
+</div>

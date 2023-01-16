@@ -1,0 +1,111 @@
+<!-- <ngx-minisidebar> [tags]="tags"</ngx-minisidebar> -->
+<div class="row flex-nowrap">
+  <div class="sidebar">
+    <div class="d-flex flex-column align-items-center  px-3 pt-2 text-white min-vh-100">
+      <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <button class="fs-5 d-none d-sm-inline btn">Menu</button>
+      </a>
+
+      <ul class="nav n" id="menu">
+
+        <div class="tags" *ngFor="let tag of tags ">
+          <li>
+            <div *ngIf="tag===''else notLoggedIn">
+              <button class="ms-1 d-none d-sm-inline btn" (click)="getServices(tag)">Other</button>
+            </div>
+            <ng-template #notLoggedIn>
+              <a data-bs-toggle="collapse"
+                class="nav-link px-0  d-flex  text-white text-decoration-none">
+                <button class="ms-1 d-none d-sm-inline btn" (click)="getServices(tag)">{{tag}}</button> </a>
+            </ng-template>
+
+
+            <ul class="collapse show nav flex-column ms-1" *ngFor="let sevice of tag.items " id="submenu1"
+              data-bs-parent="#menu">
+              <li class="justify-content-center" >
+                <a class="nav-link px-0" style="background-color: white;"> <span class="d-none d-sm-inline"></span>
+                </a>
+              </li>
+
+            </ul>
+
+          </li>
+        </div>
+
+
+
+
+      </ul>
+
+      <hr>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <mat-toolbar class="mat-elevation-z8">
+      <button
+        mat-icon-button
+        *ngIf="sidenav.mode === 'over'"
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon *ngIf="!sidenav.opened" ><i class="bi bi-list"> </i>Menu </mat-icon>
+        <mat-icon *ngIf="sidenav.opened"> <i class="bi bi-x-circle-fill"></i>Close </mat-icon>
+      </button>
+    </mat-toolbar> -->
+    
+    <!-- <mat-sidenav-container>
+      <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+       
+        <div class="tags" *ngFor="let tag of tags ">
+          
+            <div *ngIf="tag===''else notLoggedIn">
+              <a data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <button class="ms-1 d-none d-sm-inline btn" (click)="getServices('other')">Other</button> </a>
+            </div>
+            <ng-template #notLoggedIn>
+              <a data-bs-toggle="collapse"
+                class="nav-link px-0 align-middle d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <button class="ms-1 d-none d-sm-inline btn" (click)="getServices(tag)">{{tag}}</button> </a>
+            </ng-template>
+
+
+            <ul class="collapse show nav flex-column ms-1" *ngFor="let sevice of tag.items " id="submenu1"
+              data-bs-parent="#menu">
+              <li class="w-100">
+                <a class="nav-link px-0" style="background-color: white;"> <span class="d-none d-sm-inline"></span>
+                </a>
+              </li>
+
+            </ul>
+
+          
+        </div>
+
+        
+      </mat-sidenav>
+     
+    </mat-sidenav-container>     -->

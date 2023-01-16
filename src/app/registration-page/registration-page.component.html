@@ -1,0 +1,160 @@
+<div class="container mt-3">
+
+    <div class="row " style="text-align: center;">
+        <h3>Create new account</h3>
+    </div>
+
+
+
+    <div class="row ">
+        <div class="col-md-3 col-lg-3 col-sm-12 ">
+
+        </div>
+
+        <div class="col-md-6 col-lg-6 col-sm-12 ">
+            <div class="row ">
+                <h5>Fill in the form below to complete registration</h5>
+            </div>
+            <form [formGroup]="registrationForm" >
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+
+                        <label>
+                            <h5> First Name<span
+                                class="required-asterisk">*</span></h5>
+                        </label>
+
+                        <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="text"
+                            formControlName="firstName" name="firstName" placeholder="Enter your first name" autofocus (focusout)="validateFName()">
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                        <label>
+                            <h5> Last Name<span
+                                class="required-asterisk">*</span></h5>
+                        </label>
+
+                        <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="text"
+                            formControlName="lastName" name="lastName" placeholder="Enter your last name" (focusout)="validateLName()" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+
+                        <label>
+                            <h5> Password<span
+                                class="required-asterisk">*</span></h5>
+                        </label>
+
+                        <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="password"
+                            formControlName="password" name="password" (focusout)="validatePassword()" >
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                        <label>
+                            <h5><i id="confirmPassword"></i> Confirm Password<span
+                                class="required-asterisk">*</span></h5>
+                        </label>
+
+                        <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="password"
+                            formControlName="confirmPassword" name="confirmPassword" (focusout)="validateConfirmPassword()" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 ">
+                        <label>
+                            <h5> Email<span
+                                class="required-asterisk">*</span></h5>
+                        </label>
+
+                        <input class="form-control"  type="text"
+                            formControlName="email" name="email" placeholder="Enter your email" (focusout)="validateEmail()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 ">
+                        <label>
+                            <h5> UserName<span
+                                class="required-asterisk">*</span></h5>
+                        </label>
+
+                        <input class="form-control"  type="text"
+                            formControlName="userName" name="UserName" placeholder="Enter your UserName" (focusout)="validateUserName()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 ">
+                        <label>
+                            <h5> Organization</h5>
+                        </label>
+
+                        <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="text"
+                            formControlName="organization" name="organization" placeholder="Enter your organization"  (focusout)="validateOrganization()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 ">
+                        <label>
+                            <h5>Telephone</h5>
+                        </label>
+
+                        <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="text"
+                            formControlName="telephone" name="telephone" placeholder="Enter your telephone"  (focusout)="validateTelephone()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 ">
+                        <label>
+                            <h5> Country</h5>
+                        </label>
+
+                        <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="text"
+                            formControlName="country" name="country" placeholder="Enter your country" (focusout)="validateMobile()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12 ">
+                        <label>
+                            <h5> Mobile</h5>
+                        </label>
+
+                        <input class="form-control" oninput="this.value = this.value.toUpperCase()" type="number"
+                            formControlName="mobile" name="mobile" placeholder="Enter your mobile">
+                    </div>
+                </div>
+
+                <div class="row pt-3">
+                    <div class="col-md-12 col-lg-12 col-sm-12 ">
+                        <input type="checkbox" class="form-check-input" formControlName="terms" name="terms" (focusout)="validateTerms()"> 
+                        <label>
+                            <h5><i id="terms">I hereby confirm that I have read and understood the <a href="">Privacy
+                                        Policy</a> <span
+                                        class="required-asterisk">*</span></i> </h5>
+                        </label>
+                    </div>
+                </div>
+
+            </form>
+            <div class="row pt-3">
+                <div class="col-md-12 col-lg-4 col-sm-12">
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-12p pt-2">
+                    <button (click)="cancel()" class="btn cbtn">Cancel</button>
+                </div>
+                <div class="col-md-6 col-lg-4 col-sm-12 pt-2">
+                    <button (click)="register()" class="btn rbtn ">Register</button>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <h5>Already have an account? <a href="/store-login">Sign up</a></h5>
+            </div>
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-12 ">
+
+        </div>
+    </div>
+
+
+</div>

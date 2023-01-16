@@ -1,0 +1,117 @@
+/* .rbtn{
+    color: white;
+background: #1ABB9C;
+width: 130px;
+height: 40px;
+border-radius: 5%;
+margin-left: 5px;
+
+  }
+.nbtn{
+    color: white;
+    background: #1ABB9C;
+    width: 130px;
+    height: 40px;
+    border-radius: 25px;
+ margin-left: 80%;
+}
+
+body {
+  background-color: #fbfbfb;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+} */
+
+/* Sidebar */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mat-toolbar {
+  background: white
+  ;
+  color: black;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 240px;
+  border-right: none;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.content {
+  height: calc(100vh - 130px);
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+
+  padding: 16px;
+
+  overflow: auto;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+}
+
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+.designation {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: lightgrey;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: white
+}
+
+.btn{
+  color: #f0f7ff;
+}
+
+.sidebar{
+  cursor: default;
+  /* font-family: "Montserrat-Light", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  /* overflow-y: auto; */
+  font-size: 12px;
+  color: aliceblue  ;
+  background-color: #445862;
+  letter-spacing: normal;
+}
